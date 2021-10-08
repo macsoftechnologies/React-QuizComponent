@@ -12,15 +12,15 @@ class Quiz extends Component {
       quiz_position: 1,
     };
   }
-  showNextQuestion = () => {
+  showNextQuestion() {
     this.setState((state) => {
-      return { quiz_question: state.quiz_question + 1 };
+      return { quiz_position: state.quiz_position + 1 };
     });
-  };
+  }
 
-  handleResetClick = () => {
-    this.setState({ quiz_question: 1 });
-  };
+  handleResetClick() {
+    this.setState({ quiz_position: 1 });
+  }
   render() {
     const isQuizEnd =
       this.state.quiz_position - 1 === quizData.quiz_questions.length;

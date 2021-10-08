@@ -5,26 +5,23 @@ import QuizQuestionButton from "./QuizQuestionButton";
 class QuizQuestion extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       incorrectAnswer: false,
     };
   }
 
-  handleClick = (buttonText) => {
+  handleClick(buttonText) {
     if (buttonText === this.props.quiz_question.answer) {
       this.setState({
-        ...this.state,
         incorrectAnswer: false,
       });
       this.props.showNextQuestionHandler();
     } else {
       this.setState({
-        ...this.state,
         incorrectAnswer: true,
       });
     }
-  };
+  }
   render() {
     return (
       <main>
