@@ -13,7 +13,9 @@ class Quiz extends Component {
     };
   }
   showNextQuestion = () => {
-    this.setState({ quiz_question: this.state.quiz_question + 1 });
+    this.setState((state) => {
+      return { quiz_question: state.quiz_question + 1 };
+    });
   };
   render() {
     const isQuizEnd =
